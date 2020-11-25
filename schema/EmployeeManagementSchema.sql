@@ -167,6 +167,34 @@ LOCK TABLES `ProfessionalBack` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `ProjectInfo`
+--
+
+DROP TABLE IF EXISTS `ProjectInfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ProjectInfo` (
+  `Project_Id` int unsigned NOT NULL AUTO_INCREMENT,
+  `Project_Name` varchar(100) NOT NULL,
+  `Emp_Id` char(7) NOT NULL,
+  `Start_Date` date NOT NULL,
+  `End_Date` date NOT NULL,
+  PRIMARY KEY (`Project_Id`),
+  KEY `FK_EmployeeInfoProjectInfo` (`Emp_Id`),
+  CONSTRAINT `FK_EmployeeInfoProjectInfo` FOREIGN KEY (`Emp_Id`) REFERENCES `EmployeeInfo` (`Emp_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ProjectInfo`
+--
+
+LOCK TABLES `ProjectInfo` WRITE;
+/*!40000 ALTER TABLE `ProjectInfo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ProjectInfo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `SalaryInfo`
 --
 
@@ -202,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-22 19:38:15
+-- Dump completed on 2020-11-25 11:08:37

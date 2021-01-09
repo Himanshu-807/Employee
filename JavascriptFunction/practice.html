@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Resume</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/Users/himanshusharma/Documents/HTML/Javascript Crash Course/web.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light search col-xl-12 col-md-12 col-lg-12 col-xs-12 col-sm-12">
+    <a class="navbar-brand" style="color:white" href="#">MyResume</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color:white" href="file:///Users/himanshusharma/Documents/HTML/Web/web.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color:white" href="file:///Users/himanshusharma/Documents/HTML/Web/Resume.html">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color:white" href="file:///Users/himanshusharma/Documents/HTML/Web/Contact%20Me.html">Contact Me</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container">
+    <div style="color: #18bb18; font-size:76px; font-weight: bold">
+      Hello <br>
+    <h1 style="color: #18bb18; font-size:76px; font-weight: bold">I Am</h1>
+      <strong class="cur" id = "hi"></strong>
+    </div>
+    <h1 style="font-size: 35px" id = "demo4"></h1>
+    <p style="color:black; font-size:20px; font-family:Lucida Grande; margin-bottom: 20px;" id = "demo11"></p>
+    <a href="#test2" type="button" class="btn btn-success btn-click">Contact Me</a>
+    <a href="#test1" type="button" class="btn btn-success btn-click" id = "demo9"></a>
+      <div class="width head content-box-gray">
+        <div id="test1"></div>
+        <h2>Resume</h2>
+      </div>
+      <dl>
+      <dt style="color:black; font-size:25px;">Personal Profile</dt>
+      <dd style ="color:black; font-size:20px" id = "demo00"></dd>
+      <dt style="color:black; font-size:25px">Experience</dt>
+      <dd style="color:black; font-size:20px" id = "demo3">None</dd>
+      <dt style="color:black; font-size:25px">Technical Skills</dt>
+      <dd style="color:black; font-size:20px" id = "demo"></dd>
+      <dt style="color:black; font-size:25px">Education</dt>
+      <dd style="color:black; font-size:20px">Panipat Institue Of Engineering And Technology<br>Samalkha GT
+        Road<br>Kurushetra University<br>B.Tech Information Technology<br>August 2019-April 2022
+        (Pursuing)<br><br>Arya
+        Bal Bharti Public School<br>Panipat GT Road<br>CBSE Board<br>12th<br>April 2018-March 2019<br> 65%<br><br>Arya
+        Bal
+        Bharti Public School<br>Panipat GT Road<br>CBSE Board<br>10th<br>April 2016-March 2017<br>83%</dd>
+    </dl>
+      <h2 id = "demo8"></h2>
+      <div class="head content-box-gray">
+        <h2 id="test2">Contact Me</h2>
+      </div>
+    <input type="text" id="name" name="name" placeholder="Your name">
+    <input type="text" id="Number" name="Phone" placeholder="Phone">
+    <input type="text" id="Email" name="Eamil" placeholder="Email">
+    <textarea class="message" id="exampleFormControlTextarea1" placeholder="Message" style="height:100px"></textarea>
+    <button type="button" class="btn btn-success" style="margin-top:10px;">Send</button>
+  </div>
+</body>
+<script type="text/javascript">
+  
+// CLASS
+
+  class Tech{
+    constructor(skills1, skills2, skills3){
+    this.skills1 = skills1;
+    this.skills2 = skills2;
+    this.skills3 = skills3;
+    }
+  }
+    info = new Tech("Python", "C++", "Sql");
+    document.getElementById("demo").innerHTML = info.skills1 + " <br>" + info.skills2 + "<br>" + info.skills3; 
+  
+// PROTOTYPE
+
+  function PersonalDetails(){
+    this.DOB = "16 January 2001";
+    this.Gender = "Male";
+    this.MaritalStatus = "Unmarried";
+    this.Nationality = "Indian";
+    this.Hobbies = "Playing";
+    this.LanguageKnown = "English, Hindi";
+};
+  PersonalDetails.prototype = function(){
+    return(this.DOB, this.Gender, this.MaritalStatus, this.Nationality, this.Nationality, this.Hobbies, this.LanguageKnown);
+  }
+  var Details = new PersonalDetails()
+  document.getElementById("demo00").innerHTML = "Date Of Birth = " + Details.DOB +"<br>"+ "Gender = " + Details.Gender +"<br>"+"Marital Status = " + Details.MaritalStatus +"<br>"+"Nationality = " + Details.Nationality +"<br>"+"Hobbies = " + Details.Hobbies +"<br>"+"LanguageKnown = " + Details.LanguageKnown;
+  
+// CALLBACK FUNCTION
+
+function myDisplayer(some) {
+  return some;
+}
+
+function myname(name, lastname, callback) {
+  let sum = name + " " + lastname;
+  return callback (sum);
+}
+
+let result = myname("Himanshu", "Sharma", myDisplayer);
+document.getElementById("hi").innerHTML = result;
+
+// PROMISE
+
+let x = new Promise(function(resolve, reject){
+  var y = "Click Here";
+  if(y == "Click Here"){
+  resolve(y);
+  }else{
+    reject(y);
+  }
+
+});
+var res = function(y){
+  //console.log(y)
+  document.getElementById("demo9").innerHTML = y;
+}
+
+var rej = function(y){
+  console.log(y)
+}
+x.then(
+  function(y){res(y)},
+  function(y){rej(y)}
+);
+
+// ASYNC
+async function myDisplay() {
+  let myPromise = new Promise(function(myResolve, myReject) {
+    myResolve("A Information Technology Student Pursuing Engineering From PIET College Affiliated To Kurukshetra University.");
+  });
+  document.getElementById("demo11").innerHTML = await myPromise;
+}
+myDisplay();
+
+// Ajax
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     console(this.responseText);
+    }
+  };
+  xhttp.open("GET", "file.txt", true);
+  xhttp.send();
+}
+
+</script>
+</html>

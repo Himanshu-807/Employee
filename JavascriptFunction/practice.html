@@ -64,7 +64,6 @@
         Bal
         Bharti Public School<br>Panipat GT Road<br>CBSE Board<br>10th<br>April 2016-March 2017<br>83%</dd>
     </dl>
-      <h2 id = "demo8"></h2>
       <div class="head content-box-gray">
         <h2 id="test2">Contact Me</h2>
       </div>
@@ -145,13 +144,12 @@ x.then(
 
 // ASYNC
 async function myDisplay() {
-  let myPromise = new Promise(function(myResolve, myReject) {
+  await new Promise(function(myResolve, myReject) {
     myResolve("A Information Technology Student Pursuing Engineering From PIET College Affiliated To Kurukshetra University.");
   });
-  document.getElementById("demo11").innerHTML = await myPromise;
 }
-myDisplay();
-
+var z = myDisplay()
+document.getElementById("demo11").innerHTML = z;
 // Ajax
 
 function loadDoc() {
@@ -162,7 +160,7 @@ function loadDoc() {
     }
   };
   xhttp.open("GET", "file.txt", true);
-  xhttp.send();
+  xhttp.send(); 
 }
 
 </script>
